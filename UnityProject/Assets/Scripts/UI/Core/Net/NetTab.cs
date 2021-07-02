@@ -7,6 +7,8 @@ using Messages.Server;
 using UnityEngine;
 using UnityEngine.Events;
 using UI;
+using AddressableReferences;
+using Objects.Wallmounts;
 
 public enum NetTabType
 {
@@ -55,6 +57,7 @@ public enum NetTabType
 	InteliCard = 41,
 	Airlock = 42,
 	Turret = 43,
+	ACU = 44,
 
 	// add new entres to the bottom
 	// the enum name must match that of the prefab except the prefab has the word tab infront of the enum name
@@ -284,6 +287,25 @@ public class NetTab : Tab
 	public void ServerCloseTabFor(ConnectedPlayer player)
 	{
 		TabUpdateMessage.Send(player.GameObject, Provider, Type, TabAction.Close);
+	}
+
+	/// <summary>
+	/// Plays a diegetic sound (players nearby will hear it).
+	/// </summary>
+	/// <param name="sound"></param>
+	public void PlaySound(AddressableAudioSource sound)
+	{
+		if (Provider == null)
+		{
+			Logger.LogWarning($"Cannot play sound for {gameObject}; provider missing.");
+			return;
+		}
+
+		var position = Provider.TryGetComponent<WallmountBehavior>(out var wallmount)
+					? wallmount.CalculateTileInFrontPos()
+					: Provider.RegisterTile().WorldPosition;
+
+		SoundManager.PlayNetworkedAtPos(sound, position);
 	}
 }
 

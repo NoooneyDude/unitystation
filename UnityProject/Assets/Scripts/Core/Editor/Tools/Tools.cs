@@ -280,6 +280,26 @@ public class Tools : Editor
 		}
 	}
 
+	/// <summary> Snap all allowed objects to the middle of the nearest tile </summary>
+	[MenuItem("Tools/Mapping/Center allowed objects to tile")]
+	private static void CenterObjects()
+	{
+		int count = 0;
+		foreach (var cnt in FindObjectsOfType<CustomNetTransform>())
+		{
+			if (cnt.SnapToGridOnStart == false) return;
+
+			var initialPosition = cnt.transform.position;
+			cnt.transform.position = cnt.transform.position.RoundToInt();
+			if (cnt.transform.position != initialPosition)
+			{
+				count++;
+			}
+		}
+
+		Logger.Log($"Centered {count} objects!");
+	}
+
 	private static GameObject GetRootPrefabGOFromAssets(Object[] assetsToCheck)
 	{
 		foreach (var asset in assetsToCheck)

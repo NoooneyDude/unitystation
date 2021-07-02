@@ -33,11 +33,6 @@ namespace Systems.Atmospherics
 					value += a.Moles;
 				}
 
-				if (float.IsNaN(value))
-				{
-					return 0;
-				}
-
 				return value;
 			}
 		}

@@ -159,5 +159,6 @@ public enum MultitoolConnectionType
 	LightSwitch,
 	DoorButton,
 	GeneralSwitch,
-	Turret
+	Turret,
+	ACU,
 }

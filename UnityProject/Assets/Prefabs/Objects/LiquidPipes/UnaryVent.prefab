@@ -173,9 +173,27 @@ MonoBehaviour:
     Outputs: []
     MonoPipe: {fileID: 0}
   Colour: {r: 1, g: 1, b: 1, a: 1}
-  SelfSufficient: 0
-  MaxTransferMoles: 200
-  MaxOutletPressure: 1e+11
+  selfSufficient: 0
+  weldFinishSfx:
+    SetLoadSetting: 0
+    AssetAddress: 
+    AssetReference:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+--- !u!114 &2975253696005727122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5583053235923205949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca47cf326c466494c8b57b3b98133d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Controller: {fileID: 0}
 --- !u!1001 &8590873418597087604
 PrefabInstance:
   m_ObjectHideFlags: 0
