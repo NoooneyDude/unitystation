@@ -173,7 +173,7 @@ namespace Lobby
 			pendingCreationPanel.SetActive(true);
 			nextCreationButton.SetActive(false);
 			goBackCreationButton.SetActive(false);
-			pleaseWaitCreationText.text = "Please wait..";
+			pleaseWaitCreationText.text = "Please wait.."; // Poke it
 
 			ServerData.TryCreateAccount(chosenUsernameInput.text, chosenPasswordInput.text,
 				emailAddressInput.text, AccountCreationSuccess, AccountCreationError);
