@@ -147,7 +147,7 @@ namespace Lobby
 			ServerData.ReloadProfile();
 
 			float timeOutLimit = 60f;
-			float timeOutCount = 0f;
+			float timeOutCount = 0f; // Poke
 			while (string.IsNullOrEmpty(ServerData.Auth.CurrentUser.DisplayName))
 			{
 				timeOutCount += Time.deltaTime;
