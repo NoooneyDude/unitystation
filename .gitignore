@@ -100,6 +100,7 @@ UnityProject/.vscode/settings.json
 
 *.DotSettings
 
+UnityProject/AddressablePackingProjects/SoundAndMusic/UserSettings/
 UnityProject/AddressablePackingProjects/SoundAndMusic/Temp/
 UnityProject/AddressablePackingProjects/SoundAndMusic/Logs/*
 UnityProject/AddressablePackingProjects/SoundAndMusic/.vsconfig
